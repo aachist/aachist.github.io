@@ -726,14 +726,15 @@ function LegendsOfDosanna(){
 
   function openLightbox(src){ const lb = document.getElementById('lightbox'); const img = document.getElementById('lightbox-img'); img.src = src; lb.classList.add('open'); }
 
-  const gallery = [
-    { src: "img/engraving_1.png", cap: "Гравюра I" },
-    { src: "img/engraving_2.png", cap: "Гравюра II" },
-    { src: "img/engraving_3.png", cap: "Гравюра III" },
-    { src: "img/engraving_4.png", cap: "Гравюра IV" },
-    { src: "img/engraving_5.png", cap: "Гравюра V" },
-    { src: "img/user_photo.jpg", cap: "Фото" }
+const gallery = [
+    { src: "/img/engraving_1.png", cap: "Гравюра I" },
+    { src: "/img/engraving_2.png", cap: "Гравюра II" },
+    { src: "/img/engraving_3.png", cap: "Гравюра III" },
+    { src: "/img/engraving_4.png", cap: "Гравюра IV" },
+    { src: "/img/engraving_5.png", cap: "Гравюра V" },
+    { src: "/img/user_photo.jpg", cap: "Фото" }
   ];
+  
 
   return (
     <div className={(paperStyle==="dark"?"paper-dark ":"paper-light ")+(dark ? "bg-neutral-900 text-neutral-100" : "text-neutral-900")}>
