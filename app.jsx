@@ -1,3 +1,4 @@
+import ImageGallery from './ImageGallery.jsx';
 const rawText = `ЛЕГЕНДЫ ДОСАННЫ — КНИГА ПЕРВАЯ
 
 Легенды Досанны, книга первая - Взмах крыла Автор идеи Чистяков Артем
