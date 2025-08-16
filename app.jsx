@@ -844,6 +844,7 @@ const gallery = [
 
         <footer className="col-span-12 text-xs opacity-70 py-2">Сайт сгенерирован на основе загруженных файлов. Данные заметок хранятся локально.</footer>
       </div>
+       <ImageGallery />
     </div>);
 }
 
