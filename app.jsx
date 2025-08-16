@@ -1,8 +1,8 @@
-// ИСПРАВЛЕННЫЙ и ДОПОЛНЕННЫЙ app.jsx
+// Полное содержимое для файла app.jsx
 
-const rawText = `ЛЕГЕНДЫ ДОСАННЫ — КНИГА ПЕРВАЯ...`; // Ваш огромный текст остается здесь без изменений. Не копируйте его снова, оставьте как есть.
+const rawText = `ЛЕГЕНДЫ ДОСАННЫ — КНИГА ПЕРВАЯ...`; // Оставьте здесь ваш полный текст, я его сократил для краткости
 
-// Функции-помощники остаются без изменений
+// Функции-помощники (без изменений)
 function splitIntoSections(text){
   const lines = text.split("\n");
   const sections = [];
@@ -49,8 +49,8 @@ function extractGlossary(text){
   return words.map(w=>({term:w, def:"(определение уточните)"}));
 }
 
-// НОВЫЙ КОМПОНЕНТ ГАЛЕРЕИ С ЗУМОМ
-function ImageGalleryWithZoom() {
+// Новый компонент галереи с зумом
+function ImageGallery() {
   const images = [
     { src: "img/engraving_1.png", cap: "Гравюра I", subHtml: "<h4>Гравюра I</h4>" },
     { src: "img/engraving_2.png", cap: "Гравюра II", subHtml: "<h4>Гравюра II</h4>" },
@@ -89,17 +89,16 @@ function ImageGalleryWithZoom() {
               >
                 <img 
                   alt={image.cap} 
-                  src={image.src} 
+                  src={image.thumb} 
                   className="w-full h-auto block" 
                 />
-                <figcaption className="p-2 text-sm opacity-80">{image.cap}</figcaption>
+                <figcaption className="p-2 text-sm opacity-80">{image.cap || `Image ${index+1}`}</figcaption>
               </a>
             ))}
         </div>
     </section>
   );
 }
-
 
 // Основной компонент вашего сайта
 function LegendsOfDosanna(){
@@ -117,7 +116,7 @@ function LegendsOfDosanna(){
   React.useEffect(()=> localStorage.setItem("dosanna_bmarks_final", JSON.stringify(bookmarks)), [bookmarks]);
 
   const filtered = React.useMemo(()=>{ if(!query.trim()) return sections; const q = query.toLowerCase(); return sections.filter(s=> s.title.toLowerCase().includes(q) || s.content.toLowerCase().includes(q)); }, [query, sections]);
-
+  
   function saveNote(id, text){ setNotes(n=> Object.assign({}, n, {[id]: text })); }
   function toggleBookmark(id){ setBookmarks(b => b.includes(id) ? b.filter(x=>x!==id) : [...b, id]); }
 
@@ -158,7 +157,6 @@ function LegendsOfDosanna(){
               </li>
             ))}
           </ul>
-
           <div className="mt-4">
             <h4 className="font-semibold">Закладки</h4>
             <ul className="text-sm space-y-1 max-h-[25vh] overflow-auto pr-1">
@@ -203,7 +201,8 @@ function LegendsOfDosanna(){
             </article>
           ))}
           
-          <ImageGalleryWithZoom />
+          {/* ИЗМЕНЕНО: Старая галерея заменена на новую */}
+          <ImageGallery />
 
         </main>
 
@@ -220,9 +219,9 @@ function LegendsOfDosanna(){
 
         <footer className="col-span-12 text-xs opacity-70 py-2">Сайт сгенерирован на основе загруженных файлов. Данные заметок хранятся локально.</footer>
       </div>
-    </div>);
+    </div>
+  );
 }
-
 
 function Quiz(){
   const [quiz] = React.useState(() => {
