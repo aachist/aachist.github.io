@@ -7,40 +7,29 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=PT+Serif&display=swap&subset=cyrillic" rel="stylesheet">
   
-  <!-- ДОБАВЛЕНО: Стили для LightGallery -->
-
-<link rel="stylesheet" href="libs/css/lightgallery.css" />
+  <link rel="stylesheet" href="libs/css/lightgallery.css" />
 
   <style>
     body{font-family:'PT Serif',serif}
     h1,h2,h3,h4,h5{font-family:'Merriweather',serif}
-    .paper-light{background-image:url('https://www.toptal.com/designers/subtlepatterns/uploads/aged-paper.png');background-size:cover;color:#2b2620}
-    .paper-dark{background-color:#2a1f18;background-image:url('https://www.toptal.com/designers/subtlepatterns/uploads/dark-wood.png');background-size:cover;color:#f4e4c1}
-    .page-card{background-color:rgba(255,250,240,.94);box-shadow:0 2px 18px rgba(0,0,0,.25);border-radius:12px;padding:1rem;transition:transform .6s ease,opacity .6s ease;border:1px solid rgba(0,0,0,.06)}
-    .page-enter-active{opacity:1;transform:rotateY(0) translateX(0)}
-    .glass{background:rgba(255,255,255,.65);backdrop-filter:blur(4px)}
-    .img-card{background:rgba(255,255,255,.6);border:1px solid rgba(0,0,0,.05);border-radius:10px;overflow:hidden}
-    /* Пользовательский лайтбокс можно будет удалить, так как lightgallery его заменяет */
-    .lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.75);z-index:50}
-    .lightbox.open{display:flex}.lightbox img{max-width:90vw;max-height:90vh}
+    /* ... ваши остальные стили ... */
   </style>
 </head>
 <body>
   <div id="root" class="min-h-screen p-4"></div>
-  
-  <!-- УДАЛЕНО: Старый лайтбокс, так как lightgallery его заменит -->
-  <!-- <div id="lightbox" class="lightbox" onclick="this.classList.remove('open')"><img id="lightbox-img" src="" alt="Preview"/></div> -->
 
+  <!-- Скрипты должны идти в таком порядке -->
+
+  <!-- 1. React -->
   <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
   
-  <!-- ДОБАВЛЕНО: Скрипты для LightGallery (перед Babel и app.jsx) -->
+  <!-- 2. LightGallery и его плагины -->
   <script src="libs/js/lightgallery.min.js"></script>
-
+  <script src="libs/js/lg-zoom.min.js"></script>  <!-- <-- ДОБАВЛЕНА ЭТА СТРОКА -->
   
- <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-<script type="text/babel" src="app.jsx"></script>
+  <!-- 3. Babel и ваш app.jsx -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel" src="app.jsx"></script>
 </body>
 </html>
