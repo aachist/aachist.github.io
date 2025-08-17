@@ -51,13 +51,13 @@ function extractGlossary(text){
 
 // Новый компонент галереи с зумом
 function ImageGallery() {
-  const images = [
-    { src: "img/engraving_1.png", cap: "Гравюра I", subHtml: "<h4>Гравюра I</h4>" },
-    { src: "img/engraving_2.png", cap: "Гравюра II", subHtml: "<h4>Гравюра II</h4>" },
-    { src: "img/engraving_3.png", cap: "Гравюра III", subHtml: "<h4>Гравюра III</h4>" },
-    { src: "img/engraving_4.png", cap: "Гравюра IV", subHtml: "<h4>Гравюра IV</h4>" },
-    { src: "img/engraving_5.png", cap: "Гравюра V", subHtml: "<h4>Гравюра V</h4>" },
-    { src: "img/user_photo.jpg", cap: "Фото", subHtml: "<h4>Фото пользователя</h4>" }
+   const images = [
+    { src: "/img/engraving_1.png", thumb: "/img/engraving_1.png", subHtml: "<h4>Гравюра I</h4>" },
+    { src: "/img/engraving_2.png", thumb: "/img/engraving_2.png", subHtml: "<h4>Гравюра II</h4>" },
+    { src: "/img/engraving_3.png", thumb: "/img/engraving_3.png", subHtml: "<h4>Гравюра III</h4>" },
+    { src: "/img/engraving_4.png", thumb: "/img/engraving_4.png", subHtml: "<h4>Гравюра IV</h4>" },
+    { src: "/img/engraving_5.png", thumb: "/img/engraving_5.png", subHtml: "<h4>Гравюра V</h4>" },
+    { src: "/img/user_photo.jpg", thumb: "/img/user_photo.jpg", subHtml: "<h4>Фото пользователя</h4>" }
   ];
 
   React.useEffect(() => {
