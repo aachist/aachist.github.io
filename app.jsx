@@ -122,8 +122,7 @@ function LegendsOfDosanna(){
 
   function exportJSON(){ const blob = new Blob([JSON.stringify(notes, null, 2)], {type:"application/json"}); const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "dosanna_notes.json"; a.click(); }
   function exportCSV(){ let csv = "Section,Note\n"; Object.keys(notes).forEach(id=>{ const title = (sections[id] && sections[id].title) ? sections[id].title.replace(/"/g,'""') : ("Раздел " + id); const body = (notes[id]||"").replace(/"/g,'""').replace(/\n/g,"\\n"); csv += `"${title}","${body}"\n`; }); const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([csv], {type:"text/csv;charset=utf-8;"})); a.download = "dosanna_notes.csv"; a.click(); }
-  function exportMD(){ let md = "# Заметки по «Легендам Досанны»\n\n"; Object.keys(notes).forEach(id=>{ const title = (sections[id] && sections[id].title) ? sections[id].title : ("Раздел " + id); md += `## ${title}\n\n${notes[id]||}\n\n---\n\n`; }); const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([md], {type:"text/markdown"})); a.download = "dosanna_notes.md"; a.click(); }
-
+  function exportMD(){ let md = "# Заметки по «Легендам Досанны»\n\n"; Object.keys(notes).forEach(id=>{ const title = (sections[id] && sections[id].title) ? sections[id].title : ("Раздел " + id); md += `## ${title}\n\n${notes[id]||''}\n\n---\n\n`; }); const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([md], {type:"text/markdown"})); a.download = "dosanna_notes.md"; a.click(); }
   function speak(text){ if(!window.speechSynthesis){ alert("TTS не поддерживается браузером"); return; } window.speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(text || ""); u.lang = "ru-RU"; window.speechSynthesis.speak(u); }
   function stopSpeak(){ if(window.speechSynthesis) window.speechSynthesis.cancel(); }
 
