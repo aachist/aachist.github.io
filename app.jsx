@@ -63,8 +63,8 @@ function ImageGallery() {
   React.useEffect(() => {
     const galleryContainer = document.getElementById('lightgallery');
     if (galleryContainer) {
-      const lg = lightGallery(galleryContainer, {
-        plugins: [lgZoom],
+     const lg = lightGallery(galleryContainer, {
+        plugins: [window.lgZoom], // ИЗМЕНЕНИЕ: Добавили 'window.'
         speed: 500,
         licenseKey: '0000-0000-000-0000',
         mousewheel: true,
