@@ -182,6 +182,7 @@ function ImageGallery() {
     { src: "/img/engraving_3.png", thumb: "/img/engraving_3.png", subHtml: "<h4>Гравюра III</h4>" },
     { src: "/img/engraving_4.png", thumb: "/img/engraving_4.png", subHtml: "<h4>Гравюра IV</h4>" },
     { src: "/img/engraving_5.png", thumb: "/img/engraving_5.png", subHtml: "<h4>Гравюра V</h4>" },
+     { src: "/img/engraving_6.png", thumb: "/img/engraving_6.png", subHtml: "<h4>карту мира Досанны</h4>" },
     { src: "/img/user_photo.jpg", thumb: "/img/user_photo.jpg", subHtml: "<h4>Фото пользователя</h4>" }
   ];
 
